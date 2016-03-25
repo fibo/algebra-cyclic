@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "indices-permutations": "^0.2.0",
-    "multidim-array-index": "^0.2.0"
+    "multidim-array-index": "^0.2.0",
+    "prime-number": "^0.1.0"
   }
 }
