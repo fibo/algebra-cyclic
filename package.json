@@ -1,0 +1,43 @@
+{
+  "name": "algebra-cyclic",
+  "description": "creates a space isomorphic to Zp: the cyclic ring of order p, where p is prime",
+  "version": "0.0.0",
+  "homepage": "https://github.com/fibo/algebra-cyclic",
+  "author": {
+    "name": "Gianluca Casati",
+    "url": "http://g14n.info"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
+    "lint": "standard",
+    "test": "tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fibo/algebra-cyclic.git"
+  },
+  "keywords": [
+    "math",
+    "algebra",
+    "prime",
+    "cyclic"
+  ],
+  "bugs": {
+    "url": "https://github.com/fibo/algebra-cyclic/issues"
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
+  "devDependencies": {
+    "pre-commit": "^1.1.2",
+    "standard": "^5.4.1",
+    "tape": "^4.3.0"
+  },
+  "dependencies": {
+    "indices-permutations": "^0.2.0",
+    "multidim-array-index": "^0.2.0"
+  }
+}
