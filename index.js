@@ -56,7 +56,7 @@ function unique (elements) {
  * @returns {Object} Cyclic
  */
 
-function buildCyclicSpaceOf (elements) {
+function algebraCyclic (elements) {
   if ((typeof elements.length !== 'number') || (! isPrime(elements.length)))
     throw new TypeError("elements length must be prime")
 
@@ -97,10 +97,6 @@ function buildCyclicSpaceOf (elements) {
     return elements[i]
   }
 
-  function division (element1, element2) {
-    return multiplication(element1, inversion(element2))
-  }
-
   function negation (element) {
     var n = numOf(element)
 
@@ -135,13 +131,11 @@ function buildCyclicSpaceOf (elements) {
     Scalar.call(this, field, data)
   }
 
-  inherits(Cyclic, Scalar)
-
   addStaticOperators(Cyclic, buildFieldOperators(field))
 
   return Cyclic
 }
 
-module.exports = buildCyclicSpaceOf
+module.exports = algebraCyclic
 
 
