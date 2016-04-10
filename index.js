@@ -1,6 +1,8 @@
 var algebraRing = require('algebra-ring')
 var staticProps = require('static-props')
 
+var pkg = require('./package.json')
+
 /**
  * Prepend package name to error message
  */
@@ -9,6 +11,8 @@ function msg (str) {
   return pkg.name + ': ' + str
 }
 
+var error = {}
+
 staticProps(error)({
   groupCardinalityIsNotPrime: msg('elements length must be prime'),
   elementsAreNotUnique: msg('elements must be unique')
@@ -16,8 +20,6 @@ staticProps(error)({
 
 /**
  * Check if a number is prime
- *
- * @api private
  *
  * @param {Number} n
  *
@@ -38,8 +40,6 @@ function isPrime (n) {
 /**
  * Check if given elements are unique
  *
- * @api private
- *
  * @param {Array} elements
  *
  * @returns {Boolean}
@@ -58,11 +58,9 @@ function unique (elements) {
 /**
  * Construct a space isomorphic to Zp: the cyclic group of order p, where p is prime.
  *
- * @api private
- *
  * @param {Array|String} elements
  *
- * @returns {Object} Cyclic
+ * @returns {Object} cyclic ring
  */
 
 function algebraCyclic (elements) {
@@ -75,7 +73,7 @@ function algebraCyclic (elements) {
   }
 
   var zero = elements[0]
-  var one  = elements[1]
+  var one = elements[1]
 
   function numOf (element) {
     return elements.indexOf(element)
@@ -102,10 +100,11 @@ function algebraCyclic (elements) {
   }
 
   function inversion (element) {
-    for (var i = 0; i < elements.length; i++)
-      if(elements[1] == multiplication(element, elements[i]))
-
-    return elements[i]
+    for (var i = 0; i < elements.length; i++) {
+      if (elements[1] === multiplication(element, elements[i])) {
+        return elements[i]
+      }
+    }
   }
 
   function negation (element) {
@@ -118,30 +117,18 @@ function algebraCyclic (elements) {
     return elements[n]
   }
 
-  function equal (element1, element2) {
+  function equality (element1, element2) {
     return element1 === element2
   }
 
-  var operators = {
-    addition      : addition,
+  return algebraRing([zero, one], {
+    equality: equality,
+    contains: contains,
+    addition: addition,
+    negation: negation,
     multiplication: multiplication,
-    negation      : negation,
-    inversion     : inversion,
-    equal         : equal,
-    contains      : contains
-  }
-
-  var field = {
-    one     : one,
-    zero    : zero,
-    operator: operators
-  }
-
-  function Cyclic (data) {
-    Scalar.call(this, field, data)
-  }
-
-  return Cyclic
+    inversion: inversion
+  })
 }
 
 staticProps(algebraCyclic)({ error: error })

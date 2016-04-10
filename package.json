@@ -10,10 +10,16 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
+    "check-deps": "npm outdated",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
     "lint": "standard",
     "test": "tape test.js"
   },
+  "pre-commit": [
+    "lint",
+    "test",
+    "check-deps"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/fibo/algebra-cyclic.git"
@@ -37,6 +43,7 @@
     "tape": "^4.5.1"
   },
   "dependencies": {
+    "algebra-ring": "^0.5.0",
     "prime-number": "^0.1.0",
     "static-props": "^0.2.0"
   }
