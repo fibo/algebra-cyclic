@@ -1,10 +1,18 @@
-/*
-var inherits = require('inherits')
+var algebraRing = require('algebra-ring')
+var staticProps = require('static-props')
 
-var addStaticOperators  = require('./addStaticOperators'),
-    buildFieldOperators = require('./buildFieldOperators'),
-    Scalar              = require('./Scalar')
-    */
+/**
+ * Prepend package name to error message
+ */
+
+function msg (str) {
+  return pkg.name + ': ' + str
+}
+
+staticProps(error)({
+  groupCardinalityIsNotPrime: msg('elements length must be prime'),
+  elementsAreNotUnique: msg('elements must be unique')
+})
 
 /**
  * Check if a number is prime
@@ -38,10 +46,11 @@ function isPrime (n) {
  */
 
 function unique (elements) {
-  for (var i = 0; i < elements.length - 1; i++)
-    for (var j = i + 1; j < elements.length; j++)
-      if (elements[i] === elements[j])
-        return false
+  for (var i = 0; i < elements.length - 1; i++) {
+    for (var j = i + 1; j < elements.length; j++) {
+      if (elements[i] === elements[j]) return false
+    }
+  }
 
   return true
 }
@@ -57,14 +66,16 @@ function unique (elements) {
  */
 
 function algebraCyclic (elements) {
-  if ((typeof elements.length !== 'number') || (! isPrime(elements.length)))
-    throw new TypeError("elements length must be prime")
+  if (!isPrime(elements.length)) {
+    throw new TypeError(error.groupCardinalityIsNotPrime)
+  }
 
-  if ((! unique(elements)))
-    throw new TypeError("elements must be unique")
+  if (!unique(elements)) {
+    throw new TypeError(error.elementsAreNotUnique)
+  }
 
-  var zero = elements[0],
-      one  = elements[1]
+  var zero = elements[0]
+  var one  = elements[1]
 
   function numOf (element) {
     return elements.indexOf(element)
@@ -100,8 +111,7 @@ function algebraCyclic (elements) {
   function negation (element) {
     var n = numOf(element)
 
-    if (n === 0)
-      return element
+    if (n === 0) return element
 
     n = elements.length - n
 
@@ -131,11 +141,9 @@ function algebraCyclic (elements) {
     Scalar.call(this, field, data)
   }
 
-  addStaticOperators(Cyclic, buildFieldOperators(field))
-
   return Cyclic
 }
 
+staticProps(algebraCyclic)({ error: error })
+
 module.exports = algebraCyclic
-
-

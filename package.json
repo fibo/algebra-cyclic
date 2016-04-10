@@ -34,9 +34,10 @@
   "devDependencies": {
     "pre-commit": "^1.1.2",
     "standard": "^5.4.1",
-    "tape": "^4.3.0"
+    "tape": "^4.5.1"
   },
   "dependencies": {
-    "prime-number": "^0.1.0"
+    "prime-number": "^0.1.0",
+    "static-props": "^0.2.0"
   }
 }
