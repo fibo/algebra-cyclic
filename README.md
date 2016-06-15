@@ -6,12 +6,10 @@
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
-**Table Of Contents:**
-
-* [Installation](#installation)
-* [API](#api)
-* [Examples](#examples)
-* [License](#license)
+[Installation](#installation) |
+[API](#api) |
+[Examples](#examples) |
+[License](#license)
 
 ![uroboro][uroboro]
 
