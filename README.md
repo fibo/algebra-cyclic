@@ -11,7 +11,7 @@
 [Examples](#examples) |
 [License](#license)
 
-![uroboro][uroboro]
+![uroboro]
 
 ## Installation
 
