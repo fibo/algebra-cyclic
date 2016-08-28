@@ -11,7 +11,7 @@
 [Examples](#examples) |
 [License](#license)
 
-![uroboro]
+![Uroboro]
 
 ## Installation
 
@@ -123,4 +123,9 @@ algebraCyclic([1, 2, 1])
 
 [MIT](http://g14n.info/mit-license/)
 
-[uroboro]: https://upload.wikimedia.org/wikipedia/commons/7/71/Serpiente_alquimica.jpg
+<!--
+     Original Uroboro image URL is
+     https://upload.wikimedia.org/wikipedia/commons/7/71/Serpiente_alquimica.jpg
+-->
+
+[Uroboro]: media/Uroboro.jpg "Serpiente alquimica"
