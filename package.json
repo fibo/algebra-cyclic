@@ -1,7 +1,7 @@
 {
   "name": "algebra-cyclic",
   "description": "creates a space isomorphic to Zp: the cyclic ring of order p, where p is prime",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/fibo/algebra-cyclic",
   "author": {
     "name": "Gianluca Casati",
