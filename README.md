@@ -130,4 +130,4 @@ algebraCyclic([1, 2, 1])
      https://upload.wikimedia.org/wikipedia/commons/7/71/Serpiente_alquimica.jpg
 -->
 
-[Uroboro]: media/Uroboro.jpg "Serpiente alquimica"
+[Uroboro]: //g14n.info/algebra-cylic/media/Uroboro.jpg "Serpiente alquimica"
