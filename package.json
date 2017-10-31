@@ -2,7 +2,7 @@
   "name": "algebra-cyclic",
   "description": "creates a space isomorphic to Zp: the cyclic ring of order p, where p is prime",
   "version": "0.2.1",
-  "homepage": "https://github.com/fibo/algebra-cyclic",
+  "homepage": "http://g14n.info/algebra-cyclic",
   "author": {
     "name": "Gianluca Casati",
     "url": "http://g14n.info"
@@ -11,15 +11,9 @@
   "main": "index.js",
   "scripts": {
     "check-deps": "npm outdated",
-    "lint": "standard",
+    "lint": "standa",
     "test": "tape test.js",
-    "postupdate-deps": "npm test && git commit -am 'updated deps' || git checkout -- package.json",
-    "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
-    "update-deps": "npm update --save --dev",
-    "watch": "npm-watch"
-  },
-  "watch": {
-    "test": "{index,test}.js"
+    "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master"
   },
   "pre-commit": [
     "lint",
@@ -39,13 +33,12 @@
     "url": "https://github.com/fibo/algebra-cyclic/issues"
   },
   "devDependencies": {
-    "npm-watch": "^0.1.3",
     "pre-commit": "^1.1.2",
-    "standard": "^8.0.0",
+    "standa": "^1.0.2",
     "tape": "^4.5.1"
   },
   "dependencies": {
-    "algebra-ring": "^0.5.0",
-    "static-props": "^1.0.0"
+    "algebra-ring": "^0.6.1",
+    "static-props": "^1.1.0"
   }
 }
