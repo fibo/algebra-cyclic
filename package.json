@@ -11,7 +11,7 @@
   "main": "index.js",
   "scripts": {
     "check-deps": "npm outdated",
-    "lint": "standa",
+    "lint": "standa --fix",
     "test": "tape test.js",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master"
   },
@@ -34,11 +34,11 @@
   },
   "devDependencies": {
     "pre-commit": "^1.1.2",
-    "standa": "^1.1.0",
-    "tape": "^4.5.1"
+    "standa": "^2.0.1",
+    "tape": "^4.9.0"
   },
   "dependencies": {
-    "algebra-ring": "^0.6.2",
+    "algebra-ring": "^0.6.3",
     "static-props": "^1.1.1"
   }
 }
