@@ -1,7 +1,7 @@
 {
   "name": "algebra-cyclic",
   "description": "creates a space isomorphic to Zp: the cyclic ring of order p, where p is prime",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "homepage": "http://g14n.info/algebra-cyclic",
   "author": {
     "name": "Gianluca Casati",
