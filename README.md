@@ -9,7 +9,6 @@
 
 [![NPM version](https://badge.fury.io/js/algebra-cyclic.svg)](http://badge.fury.io/js/algebra-cyclic)
 [![Build Status](https://travis-ci.org/fibo/algebra-cyclic.svg?branch=master)](https://travis-ci.org/fibo/algebra-cyclic?branch=master)
-[![Dependency Status](https://gemnasium.com/fibo/algebra-cyclic.svg)](https://gemnasium.com/fibo/algebra-cyclic)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 

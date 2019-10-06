@@ -1,4 +1,4 @@
-var algebraCyclic = require('./index')
+var algebraCyclic = require('./algebra-cyclic.js')
 var algebraRing = require('algebra-ring')
 var test = require('tape')
 

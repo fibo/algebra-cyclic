@@ -8,7 +8,7 @@
     "url": "http://g14n.info"
   },
   "license": "MIT",
-  "main": "index.js",
+  "main": "algebra-cyclic.js",
   "scripts": {
     "check-deps": "npm outdated",
     "lint": "standa --fix",
@@ -34,11 +34,11 @@
   },
   "devDependencies": {
     "pre-commit": "^1.1.2",
-    "standa": "^2.0.1",
-    "tape": "^4.9.0"
+    "standa": "^14.0.0",
+    "tape": "^4.11.0"
   },
   "dependencies": {
-    "algebra-ring": "^0.6.3",
-    "static-props": "^1.1.1"
+    "algebra-ring": "^0.6.4",
+    "static-props": "^1.1.2"
   }
 }
